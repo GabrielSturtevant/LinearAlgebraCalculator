@@ -79,7 +79,7 @@
 			<div class="empty_matrix1" id="empty_matrix1">
 			{%- for x in matrix_info['empty'] %}
 				{%- for name in x %}
-					<input class="empty" required="True" type="number" min="0" name="{{ name }}">
+					<input class="empty" required="True" type="number" name="{{ name }}">
 				{%- endfor %}
 				<br>
 			{%- endfor %}
@@ -89,7 +89,7 @@
 				<div class="empty_matrix2" id="empty_matrix2">
 				{%- for x in matrix_info['second_array'] %}
 					{%- for name in x %}
-						<input class="empty" required="True" type="number" min="0" name="{{ name }}">
+						<input class="empty" required="True" type="number" name="{{ name }}">
 				{%- endfor %}
 				<br>
 			{%- endfor %}
