@@ -62,7 +62,7 @@
 		<br>
 		<input type="checkbox" class="checkbox" name="Reduce">Reduce
 		<br>
-		<button type="submit" name="action" value="submit_dimensions">Create Matrix</button>
+		<input type="submit" name="action" value="submit_dimensions">
 	</form>
 
 	<form action="" method="POST">
@@ -90,7 +90,7 @@
 			{%- endif %}
 			</div>
             <div id="submit_button">
-			    <button type="submit" name="action" value="submit_matrix">Solve Matrix</button>
+			    <input type="submit" name="action" value="submit_matrix">
             </div>
 		{%- elif matrix_info['is_full'] %}
             <h2>Solved Matrix</h2>
