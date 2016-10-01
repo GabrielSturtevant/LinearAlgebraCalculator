@@ -1,5 +1,4 @@
-div#dimension_wrapper{
-    width: 100%;
+dimension_wrapper{
     float: left;
 }
 
@@ -31,13 +30,11 @@ div.error_label {
 }
 
 div#input1 {
-    width: 80px;
+    width: 100%;
     float: left;
 }
 
 div#input2 {
-    margin-left: 10px;
-    float: left;
     visibility: collapse;
 }
 
@@ -45,10 +42,6 @@ div#submit_button {
     width: 100%;
     clear: both;
     padding-top: 5px;
-}
-
-input.dimension {
-    width: 25px;
 }
 
 input.empty {
@@ -61,4 +54,16 @@ input.populated {
     width: 40px;
     padding-bottom: 0px;
     background: lightgray;
+}
+
+.padding-left{
+	padding-left: 2%;
+}
+
+.background-color{
+	background-color:#BEC8D1;
+}
+
+.float-left{
+	float:left;
 }

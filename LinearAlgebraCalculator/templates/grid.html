@@ -31,44 +31,51 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <script src="../static/functions.js"></script>
-	<title>Title</title>
+	<title>LINALG Reducer</title>
 </head>
-<body>
-	<h1>Linear Algebra Reducer</h1>
+<body class="background-color">
+	<div class="jumbotron">
+		<div class="container">
+			<h1 class="text-center">Linear Algebra Reducer</h1>
+		</div>
+	</div>
 	<form action="" method="POST">
-		<h3>Dimensions</h3>
-		<div id="dimension_wrapper">
-			<div id="input1">
-				<input required="True" id="row_number1" class="dimension" type="number" name="row_number1">
+		<h3 class="page-header padding-left">Dimensions</h3>
+		<div class="form-group" id="dimension_wrapper">
+			<div class="padding-left" id="dimension_wrapper input1">
+				<input required="True" id="row_number1" type="number" name="row_number1" placeholder="Rows">
 				<strong>X</strong>
-				<input required="True" id="column_number1" class="dimension" type="number" name="column_number1">
+				<input required="True" id="column_number1" type="number" name="column_number1" placeholder="Columns">
 			</div>
-			<div id="input2">
-				<input id="row_number2" class="dimension" type="number" name="row_number2">
+			<br>
+			<div class="padding-left" id="input2">
+				<input id="row_number2" type="number" name="row_number2" placeholder="Rows">
 				<strong>X</strong>
-				<input id="column_number2" class="dimension" type="number" name="column_number2">
+				<input id="column_number2" type="number" name="column_number2" placeholder="Columns">
 			</div>
 		</div>
-		<br>
 		<br>
 		<div class="error_label">
 			{{ dimension_mismatch }}
 		</div>
-		<input type="checkbox" onclick="set_visibility();" class="checkbox" name="Multiply">Multiply
-		<br>
-		<input type="checkbox" class="checkbox" name="Reduce">Reduce
-		<br>
-		<input type="submit" name="action" value="submit_dimensions">
+		<div class="padding-left">
+			<input type="checkbox" onclick="set_visibility();" class="float-left" name="Multiply">Multiply
+			<br>
+			<input type="checkbox" class="float-left" name="Reduce">Reduce
+			<br>
+			<input type="submit" name="action" value="submit_dimensions">
+		</div>
 	</form>
 
 	<form action="" method="POST">
 		{%- if matrix_info['is_empty'] %}
-            <h2>Matrix</h2>
-			<div class="empty_matrices" id="empty_matrices">
+            <h3 class="page-header padding-left">Matrix</h2>
+			<div class="empty_matrices padding-left" id="empty_matrices">
 			<div class="empty_matrix1" id="empty_matrix1">
 			{%- for x in matrix_info['empty'] %}
 				{%- for name in x %}
@@ -89,17 +96,19 @@
 				</div>
 			{%- endif %}
 			</div>
-            <div id="submit_button">
+            <div class="padding-left" id="submit_button">
 			    <input type="submit" name="action" value="submit_matrix">
             </div>
-		{%- elif matrix_info['is_full'] %}
-            <h2>Solved Matrix</h2>
-			{%- for x in matrix_info['solved'] %}
-				{%- for value in x %}
-					<input class="populated" readonly="True" value="{{ value }}">
+		{%- elif matrix_info['is_full'] %}	
+			<h3 class="page-header padding-left">Solved Matrix</h2>
+			<div class="padding-left">
+				{%- for x in matrix_info['solved'] %}
+					{%- for value in x %}
+						<input class="populated" readonly="True" value="{{ value }}">
+					{%- endfor %}
+				<br>
 				{%- endfor %}
-			<br>
-			{%- endfor %}
+			</div>
 		{%- endif %}
 		<br>
 	</form>
